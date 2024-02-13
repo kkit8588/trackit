@@ -1,0 +1,190 @@
+/*CUSTOM FONT FAMILY online*/
+@font-face {
+  font-family: 'Inter';
+  src: url('../plugins/inter-font/Inter-VariableFont_slnt,wght.ttf') format('ttf'),
+
+  /* Add more font formats if available */
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+	--light-violet: #756cb1;
+	--sidebar: #332397;
+	--white: #ffffff;
+	--black: #040000;
+
+	--opacity-gray: rgba(24, 49, 83, 0.2);
+
+	--font-family: 'Inter', sans-serif;
+}
+
+*{	
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-family) !important;
+}
+body{
+	background: var(--white) !important;
+	height: 100vh;
+}
+/*======================================
+			TOGGLE
+=======================================*/
+.side-bar.toggle{
+	left: -230px;
+}
+.headermenu.toggle,
+.content.toggle{
+	left: 0;
+	width: 100%;
+}
+/*======================================
+			DASHBOARD
+=======================================*/
+.dashboard-card {
+	opacity: 0.9;
+}
+
+
+/*======================================
+			FORM
+=======================================*/
+/*LOGIN*/
+.hf-bg{
+	background: var(--sidebar) !important;
+}
+.login-container{
+	min-height: 100vh;
+}
+.loginForm{
+	width: 450px;
+}
+.inputContainer{
+	background-color: var(--sidebar);
+}
+/*======================================
+								side-bar
+=======================================*/
+.side-bar{
+	background-color: var(--sidebar);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 0 10px;
+	width: 230px;
+	transition: left 0.4s ease;
+	z-index: 10;
+}
+.nav-item {
+	border-radius: 4px;
+	font-weight: 500;
+	color: var(--white);
+}
+.nav-item:hover,
+.active{
+	background: var(--white);
+	color: #000;
+
+}
+li .nav-link{
+	display: flex;
+	flex-direction: row;
+	column-gap: 8px;
+}
+.icon-span{
+	width: 20px;
+	display: flex;
+}
+#menuIcon{
+	top:  !important;
+	right: -38px;
+}
+
+/*======================================
+								CONTENT
+=======================================*/
+.headermenu{
+	position: fixed;
+	width: calc(100% - 230px);
+	top: 0;
+	left: 230px;
+	background: var(--sidebar);
+	z-index: 9;
+	transition: all 0.4s ease;
+}
+.content{
+	width: calc(100% - 230px);
+	position: relative;
+	top: 70px;
+	left: 230px;
+	background: var(--white);
+	transition: all 0.4s ease;
+}
+.AC_Title{
+	background: var(--sidebar);
+}
+.title_logo{
+	font-size: clamp(0.75rem, 0.3333rem + 1.3333vw, 1.5rem);
+}
+
+/*ASSISTANCE CATEGORY*/
+.assistanceBtn button{
+	border: 2px solid var(--sidebar);
+}
+.actives,
+.assistanceBtn button:hover{
+	border: 2px solid var(--sidebar);
+	background: var(--sidebar);
+	color: var(--white);
+}
+.paginate_button,
+.paginate_active {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 2px;
+    cursor: pointer;
+    *cursor: hand;
+}
+/*==================================
+								TABLE
+====================================*/
+.tableHead tr th{
+	background-color: var(--sidebar) !important;
+	color: var(--white);
+}
+.table-div{
+    max-height: 75vh !important;
+}
+
+    
+@media (max-width: 900px){
+	.headermenu{
+		width: 100% !important;
+	}
+	.headermenu,
+	.content{
+		width: unset;
+		left: unset;
+	}
+	.side-bar{
+		display: block;
+		z-index: 100;
+	}
+	.side-bar.backdrops::after{
+	content: "";
+	width: 100%;
+    height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: left 0.4s ease;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	backdrop-filter: blur(1px);
+
+
+	}
+	
+}
